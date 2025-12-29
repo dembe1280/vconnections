@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>V Connections | iPhone & Accessories</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>V Connections</h1>
+  <p>iPhone & Accessories Reseller</p>
+</header>
+
+<section class="hero">
+  <img src="products.png" alt="V Connections Products">
+</section>
+
+<section class="products">
+  <h2>📱 iPhones</h2>
+
+  <table>
+    <tr>
+      <th>Model</th>
+      <th>Price</th>
+      <th>Status</th>
+    </tr>
+
+    <tr>
+      <td>iPhone SE 2020</td>
+      <td>R3 500</td>
+      <td><button class="stock-btn">Available</button></td>
+    </tr>
+
+    <tr>
+      <td>iPhone XR</td>
+      <td>R4 500</td>
+      <td><button class="stock-btn">Available</button></td>
+    </tr>
+
+    <tr>
+      <td>iPhone 11</td>
+      <td>R5 400</td>
+      <td><button class="out-btn" disabled>Out of Stock</button></td>
+    </tr>
+
+    <tr>
+      <td>iPhone 12</td>
+      <td>R6 500</td>
+      <td><button class="stock-btn">Available</button></td>
+    </tr>
+
+    <tr>
+      <td>iPhone 13</td>
+      <td>R9 000</td>
+      <td><button class="stock-btn">Available</button></td>
+    </tr>
+  </table>
+</section>
+
+<section class="order-form">
+  <h2>📝 Place Your Order</h2>
+
+  <input id="name" placeholder="Your Name">
+  <input id="phone" placeholder="Phone Model (e.g. iPhone 13)">
+
+  <button onclick="sendOrder()">Send Order via WhatsApp</button>
+</section>
+
+<footer>
+  <p>Upgrade • Connect • Save</p>
+</footer>
+
+<a class="whatsapp-btn"
+   href="https://wa.me/27799109868"
+   target="_blank">💬 WhatsApp</a>
+
+<script>
+function sendOrder() {
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+
+  if(name === "" || phone === "") {
+    alert("Please fill in your name and phone model");
+    return;
+  }
+
+  let message =
+    "Hi, my name is " + name +
+    ". I want to order " + phone + ".";
+
+  let url = "https://wa.me/27799109868?text=" + encodeURIComponent(message);
+  window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
